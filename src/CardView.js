@@ -112,7 +112,7 @@ export default class CardView extends Component {
   render() {
     const { focused,
       brand, name, number, expiry, cvc, customIcons,
-      placeholder, imageFront, imageBack, scale, fontFamily } = this.props;
+      placeholder, expiryLabel, imageFront, imageBack, scale, fontFamily } = this.props;
 
     const Icons = { ...defaultIcons, ...customIcons };
     const isAmex = brand === "american-express";
@@ -145,7 +145,7 @@ export default class CardView extends Component {
                 { !name ? placeholder.name : name.toUpperCase() }
               </Text>
               <Text style={[s.baseText, { fontFamily }, s.expiryLabel, s.placeholder, focused === "expiry" && s.focused]}>
-                MONTH/YEAR
+              {expiryLabel}
               </Text>
               <Text style={[s.baseText, { fontFamily }, s.expiry, !expiry && s.placeholder, focused === "expiry" && s.focused]}>
                 { !expiry ? placeholder.expiry : expiry }
