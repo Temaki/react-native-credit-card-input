@@ -144,7 +144,7 @@ export default class CreditCardInput extends Component {
       cardImageFront, cardImageBack, inputContainerStyle,
       values: { number, expiry, cvc, name, type }, focused,
       allowScroll, requiresName, requiresCVC, requiresPostalCode,
-      cardScale, cardFontFamily, cardBrandIcons, cardviewPlaceholders,
+      cardScale, cardFontFamily, cardBrandIcons, cardviewPlaceholders, expiryLabel,
     } = this.props;
 
     return (
@@ -160,7 +160,8 @@ export default class CreditCardInput extends Component {
           number={number}
           expiry={expiry}
           cvc={cvc}
-          placeholder={cardviewPlaceholders} />
+          placeholder={cardviewPlaceholders}
+          expiryLabel={expiryLabel} />
         <ScrollView ref="Form"
           horizontal
           keyboardShouldPersistTaps="always"
